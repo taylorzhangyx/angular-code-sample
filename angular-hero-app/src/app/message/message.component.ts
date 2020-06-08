@@ -8,9 +8,17 @@ import { MessageService } from '../message.service';
 })
 export class MessagesComponent implements OnInit {
 
-  constructor(public messageService: MessageService) { }
+  constructor(private messageService: MessageService) { }
 
   ngOnInit() {
   }
 
+  // everytime the button is clicked, this method is called.
+  getMessages(): string[] {
+    return this.messageService.messages
+  }
+
+  clear() {
+    this.messageService.clear()
+  }
 }
